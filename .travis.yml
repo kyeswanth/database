@@ -40,7 +40,7 @@ jobs:
         - date
         - psql -U postgres -c "create user test with password 'test';"
         - psql -c 'create database test owner test;' -U postgres
-        - docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPassword234" -p 1434:1433 --name=mssql-server-linux-latest -d mcr.microsoft.com/mssql/server:2019-latest
+        - docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPassword234" -p 1434:1433 --name=mssql-server-linux-latest -e TZ=America/Los_Angeles -d mcr.microsoft.com/mssql/server:2019-latest
         - docker cp sqlserver.sql mssql-server-linux-latest:sqlserver.sql
         - sleep 15
         - docker exec -it mssql-server-linux-latest /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'MyPassword234' -i sqlserver.sql
