@@ -47,7 +47,7 @@ jobs:
             status=$(docker inspect --format='{{json .State.Health}}' mssql-server-linux-latest | jq '.Status')
           done
         - docker cp sqlserver.sql mssql-server-linux-latest:sqlserver.sql
-        - docker exec -it mssql-server-linux-latest /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'MyPassword234' -i sqlserver.sql
+        - docker exec -it mssql-server-linux-latest /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'SqlPassword234' -i sqlserver.sql
       # Skip the default mvn command because we want to set the profile explicitly
       install: true
       script:
