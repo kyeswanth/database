@@ -48,7 +48,7 @@ jobs:
           done
         - docker cp sqlserver.sql mssql-server-linux-latest:sqlserver.sql
         - docker exec -it mssql-server-linux-latest /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'SqlPassword234' -i sqlserver.sql
-        - docker run --name oracle-latest-19c -p 1521:1521 -p 5500:5500 -e TZ=America/Los_Angeles -e ORACLE_SID=ORCLCDB -e ORACLE_PDB=ORCLPDB1  -e ORACLE_PWD=OraclePassword456 -d madhus2087/oracledb:19.3
+        - docker run --name oracle-latest-19c -p 1521:1521 -p 5500:5500 -e TZ=America/Los_Angeles -e ORACLE_SID=ORCLCDB -e ORACLE_PDB=ORCLPDB1  -e ORACLE_PWD=OraclePassword456 -d us-west1-docker.pkg.dev/som-rit-infrastructure-prod/public/oracledb:19.3
         - |
           until [  "$status" = '"healthy"' ]
           do
