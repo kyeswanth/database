@@ -8,6 +8,13 @@
       <username>${env.REPO_USERNAME}</username>
       <password>${env.REPO_API_TOKEN}</password>
     </server>
+            
+    <server>
+      <id>io.cloudrepo.rit-ext-private</id>
+      <username>${env.REPO_USERNAME}</username>
+      <password>${env.REPO_API_TOKEN}</password>
+    </server>
+            
     <server>
       <id>ossrh</id>
       <username>${env.OSSRH_USERNAME}</username>
