@@ -13,6 +13,7 @@
   <profiles>
     <profile>
       <id>travis-ci</id>
+      <repositories>
         <repository>
           <id>io.cloudrepo.rit-ext-private</id>
           <url>https://susom.mycloudrepo.io/repositories/rit-ext-private</url>
@@ -20,6 +21,7 @@
             <enabled>false</enabled>
           </snapshots>
         </repository>
+      </repositories>
 
       <pluginRepositories>
         <pluginRepository>
