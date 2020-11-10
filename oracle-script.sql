@@ -1,4 +1,4 @@
-startup;
+-- startup;
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER testuser IDENTIFIED BY "TestPwd@456";
 GRANT CREATE SESSION TO testuser;
