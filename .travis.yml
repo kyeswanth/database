@@ -64,8 +64,9 @@ jobs:
         srcclr: true
       before_script:
         - date
+        - echo "$ARTIFACT_REGISTRY_KEY" | docker login -u _json_key --password-stdin https://us-west1-docker.pkg.dev
         #- docker run --name oracle-latest-19c -p 1521:1521 -p 5500:5500 -e TZ=America/Los_Angeles -e ORACLE_SID=ORCLCDB -e ORACLE_PDB=ORCLPDB1  -e ORACLE_PWD=OraclePassword456 -d madhus2087/oracledb:19.3
-        - docker run --name oracle-latest-19c -p 1521:1521 -p 5500:5500  -d madhus2087/oracledb:19.3-quick
+        - docker run --name oracle-latest-19c -p 1521:1521 -p 5500:5500  -d us-west1-docker.pkg.dev/som-rit-infrastructure-prod/third-party/oracledb:19.3-quick
         - |
           until [  "$status" = '"healthy"' ]
           do
